@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #f4f4f5;
+  --ink: #f4f4f5;
+  --ink-muted: #a1a1aa;
+  /* Warm paper accents — no neon, no gradients. */
+  --accent: #fde68a;       /* amber-200 → marker / hand-drawn highlight */
+  --accent-2: #d6d3d1;     /* stone-300 → secondary marker */
+  --accent-3: #fef3c7;     /* amber-100 → softest cream */
+  --paper: #111111;
+  --line: rgba(244, 244, 245, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-paper: var(--paper);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-hand: var(--font-caveat);
+}
+
+/* Kill horizontal scroll everywhere. `clip` doesn't break fixed-positioned
+   children (sidebar / mobile tabs) the way `hidden` does. */
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: clip;
+}
+
+/* Canvas-style grid background — kept subtle, no colour. */
+.canvas-grid {
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 40%, transparent 85%);
+}
+
+/* Glow — desaturated warm tones, very subtle. No bright neon halos. */
+.canvas-glow {
+  background:
+    radial-gradient(60rem 40rem at 15% 10%, rgba(253, 230, 138, 0.04), transparent 60%),
+    radial-gradient(50rem 36rem at 85% 20%, rgba(214, 211, 209, 0.04), transparent 60%);
+}
+
+.font-hand {
+  font-family: var(--font-hand), "Comic Sans MS", cursive;
+}
+
+/* "Drawing on canvas" arrow animation — SVG paths reveal themselves. */
+.draw-path {
+  stroke-dasharray: var(--len, 1200);
+  stroke-dashoffset: var(--len, 1200);
+  animation: draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: var(--delay, 0.2s);
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-fade {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: var(--delay, 1.2s);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Highlighter underline — muted warm cream, not bright pink. */
+.scribble {
+  text-decoration: none;
+  background-image: linear-gradient(transparent 60%, rgba(253, 230, 138, 0.20) 60%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Sticky note — actual paper cream, not neon yellow. */
+.sticky-note {
+  background: #f5ecd9;
+  color: #1c1917;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.06),
+    0 10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.tape {
+  background: rgba(244, 244, 245, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.paper-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(244, 244, 245, 0.08);
+  border-radius: 18px;
+}
+
+.paper-card:hover {
+  border-color: rgba(253, 230, 138, 0.28);
+}
+
+/* Logo mark — flat amber chip, no gradient. */
+.logo-chip {
+  background: #fde68a;
+  color: #1c1917;
+}
+
+.cursor-dot {
+  animation: cursorBob 2.4s ease-in-out infinite;
+}
+
+@keyframes cursorBob {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-6px) rotate(-12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw-path,
+  .draw-fade,
+  .cursor-dot {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
