@@ -8,9 +8,9 @@ import { ProjectWorkspace } from "@/components/canvas/ProjectWorkspace";
 export async function generateMetadata(props) {
   const { id } = await props.params;
   const me = await auth();
-  if (!me?.user) return { title: "Project — vidagent" };
+  if (!me?.user) return { title: "Project — FluxAgent" };
   const project = await getProject(id, me.user.id ?? me.user.email);
-  return { title: project ? `${project.name} — vidagent` : "Project — vidagent" };
+  return { title: project ? `${project.name} — FluxAgent` : "Project — FluxAgent" };
 }
 
 export default async function ProjectWorkspacePage(props) {

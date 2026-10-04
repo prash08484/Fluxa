@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/app/PageHeader";
 import { NewProjectWizard } from "@/components/app/NewProjectWizard";
 
-export const metadata = { title: "New project — vidagent" };
+export const metadata = { title: "New project — FluxAgent" };
 
 export default function NewProjectPage() {
   return (
