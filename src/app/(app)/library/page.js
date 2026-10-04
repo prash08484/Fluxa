@@ -3,7 +3,7 @@ import { listItems } from "@/services/library/store";
 import { PageHeader } from "@/components/app/PageHeader";
 import { LibraryList } from "@/components/app/LibraryList";
 
-export const metadata = { title: "Library — vidagent" };
+export const metadata = { title: "Library — FluxAgent" };
 
 export default async function LibraryPage() {
   const me = await auth();
