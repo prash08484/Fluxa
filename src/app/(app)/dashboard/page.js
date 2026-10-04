@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/app/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/app/Icon";
 
-export const metadata = { title: "Dashboard — vidagent" };
+export const metadata = { title: "Dashboard — FluxAgent" };
 
 const STATUS_COPY = {
   draft: { label: "draft", color: "text-zinc-400 border-white/10 bg-white/[0.03]" },
