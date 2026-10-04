@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/app/PageHeader";
 import { AnalyzeTool } from "@/components/app/tools/AnalyzeTool";
 
-export const metadata = { title: "Judge & analyze — vidagent" };
+export const metadata = { title: "Judge & analyze — FluxAgent" };
 
 export default function AnalyzePage() {
   return (
