@@ -64,7 +64,7 @@ export async function generateLinkedinImage({ post, brief, postType }) {
     if (!b64) return { url: null, error: "Image API returned no data." };
 
     const uploaded = await uploadBase64Image(b64, {
-      folder: "vidagent/linkedin",
+      folder: "fluxagent/linkedin",
       width: 1200,
       height: 627,
     });

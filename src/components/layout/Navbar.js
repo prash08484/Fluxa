@@ -7,10 +7,10 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="grid h-8 w-8 place-items-center rounded-lg logo-chip font-bold">
-            v
+            f
           </span>
           <span className="font-semibold tracking-tight text-zinc-50">
-            vidagent
+            FluxAgent
           </span>
           <span className="font-hand text-amber-200 text-base ml-1 group-hover:rotate-3 transition-transform">
             ~beta

@@ -4,10 +4,10 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="grid h-7 w-7 place-items-center rounded-md logo-chip font-bold text-sm">
-            v
+            f
           </span>
           <span className="text-sm text-zinc-400">
-            vidagent · the canvas for creators
+            fluxagent · the canvas for creators
           </span>
         </div>
         <div className="flex items-center gap-6 text-sm text-zinc-500">

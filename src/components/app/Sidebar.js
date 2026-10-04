@@ -14,9 +14,9 @@ export function Sidebar({ user }) {
       <div className="px-5 pt-6 pb-4">
         <Link href="/dashboard" className="flex items-center gap-2 group">
           <span className="grid h-8 w-8 place-items-center rounded-lg logo-chip font-bold">
-            v
+            f
           </span>
-          <span className="font-semibold tracking-tight text-zinc-50">vidagent</span>
+          <span className="font-semibold tracking-tight text-zinc-50">FluxAgent</span>
           <span className="ml-1 font-hand text-amber-200 text-sm group-hover:rotate-3 transition-transform">
             ~beta
           </span>

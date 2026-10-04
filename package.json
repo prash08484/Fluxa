@@ -1,5 +1,5 @@
 {
-  "name": "vidagent",
+  "name": "fluxagent",
   "version": "0.1.0",
   "private": true,
   "scripts": {

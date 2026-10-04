@@ -45,7 +45,7 @@ export async function getCheckpointer() {
       return new MongoDBSaver({
         client,
         dbName:
-          process.env.MONGO_DB ?? process.env.MONGODB_DB ?? "vidagent",
+          process.env.MONGO_DB ?? process.env.MONGODB_DB ?? "fluxagent",
       });
     })();
   }

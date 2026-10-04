@@ -6,7 +6,7 @@
  * pool. In prod we just keep one client for the process lifetime.
  *
  * Default URI: mongodb://localhost:27017
- * Default db:  vidagent
+ * Default db:  fluxagent
  * Override:    MONGODB_URI / MONGODB_DB env vars
  */
 
@@ -19,17 +19,17 @@ const URI =
   process.env.MONGODB_URI ??
   "mongodb://localhost:27017";
 const DB_NAME =
-  process.env.MONGO_DB ?? process.env.MONGODB_DB ?? "vidagent";
+  process.env.MONGO_DB ?? process.env.MONGODB_DB ?? "fluxagent";
 
 /** Globally-cached promise so hot reloads reuse the same client. */
 function getClientPromise() {
-  if (!globalThis.__vidagent_mongo_client_promise__) {
+  if (!globalThis.__fluxagent_mongo_client_promise__) {
     const client = new MongoClient(URI, {
       serverSelectionTimeoutMS: 5000,
     });
-    globalThis.__vidagent_mongo_client_promise__ = client.connect().catch((err) => {
+    globalThis.__fluxagent_mongo_client_promise__ = client.connect().catch((err) => {
       // Reset so the next call retries instead of being stuck with a failed promise.
-      globalThis.__vidagent_mongo_client_promise__ = null;
+      globalThis.__fluxagent_mongo_client_promise__ = null;
       throw new Error(
         `Could not connect to MongoDB at ${URI}. Is it running?\n` +
           `Start it with:  mongod --dbpath ~/data/db   (or your data dir)\n` +
@@ -37,7 +37,7 @@ function getClientPromise() {
       );
     });
   }
-  return globalThis.__vidagent_mongo_client_promise__;
+  return globalThis.__fluxagent_mongo_client_promise__;
 }
 
 export async function getClient() {

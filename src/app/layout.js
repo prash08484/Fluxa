@@ -18,7 +18,7 @@ const caveat = Caveat({
 });
 
 export const metadata = {
-  title: "Vidagent — The AI Operating System for Creators",
+  title: "FluxAgent — The AI Operating System for Creators",
   description:
     "Type a niche. Get trending ideas, hooks, full scripts, thumbnail concepts and SEO — in one canvas. Built for creators who'd rather film than think about what to film.",
 };

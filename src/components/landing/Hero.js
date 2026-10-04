@@ -118,7 +118,7 @@ function DemoFrame() {
             <span className="h-3 w-3 rounded-full bg-zinc-700" />
           </div>
           <div className="ml-3 flex-1 rounded-md bg-black/60 px-3 py-1 text-xs text-zinc-500 font-mono">
-            vidagent.app/canvas
+            fluxagent.app/canvas
           </div>
         </div>
 

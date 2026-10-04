@@ -33,7 +33,7 @@ export function cloudinaryAvailable() {
  * Upload a file (Buffer | Uint8Array) and return { url, publicId, width, height }.
  * Throws if Cloudinary isn't configured — caller should check `cloudinaryAvailable()` first.
  */
-export async function uploadImage(buffer, { folder = "vidagent/projects" } = {}) {
+export async function uploadImage(buffer, { folder = "fluxagent/projects" } = {}) {
   if (!ensureConfigured()) {
     throw new Error("Cloudinary not configured. Set CLOUDINARY_* env vars.");
   }
@@ -70,7 +70,7 @@ export async function uploadImage(buffer, { folder = "vidagent/projects" } = {})
 export async function uploadBase64Image(
   b64,
   {
-    folder = "vidagent/thumbnails",
+    folder = "fluxagent/thumbnails",
     /** Crop to these exact dimensions via Cloudinary's smart-gravity fill.
      *  Null = no crop, keep original dimensions. */
     width = null,
