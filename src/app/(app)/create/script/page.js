@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/app/PageHeader";
 import { ScriptTool } from "@/components/app/tools/ScriptTool";
 
-export const metadata = { title: "Write script — vidagent" };
+export const metadata = { title: "Write script — FluxAgent" };
 
 export default function ScriptPage() {
   return (

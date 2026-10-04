@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/app/PageHeader";
 import { ThumbnailTool } from "@/components/app/tools/ThumbnailTool";
 
-export const metadata = { title: "Make thumbnail — vidagent" };
+export const metadata = { title: "Make thumbnail — FluxAgent" };
 
 export default function ThumbnailPage() {
   return (
