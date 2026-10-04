@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { auth, signIn } from "@/auth";
 
 export const metadata = {
-  title: "Sign in — vidagent",
+  title: "Sign in — FluxAgent",
 };
 
 export default async function LoginPage({ searchParams }) {
